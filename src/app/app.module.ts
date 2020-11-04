@@ -12,6 +12,7 @@ import { UserService } from './shared/user.service';
 import { LoginComponent } from './login/login.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
+import { InterceptorService } from './authentication/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, InterceptorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
