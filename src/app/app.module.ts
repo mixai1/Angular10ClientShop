@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { InterceptorService } from './authentication/interceptor.service';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { CarService } from './shared/car.service';
+import { CarDetailComponent } from './car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     NavBarComponent,
     HomeComponent,
     AdminPanelComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     FormsModule
   ],
   providers: [UserService,
+              CarService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
