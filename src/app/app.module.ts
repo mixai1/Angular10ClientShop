@@ -17,6 +17,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { CarService } from './shared/car.service';
 import { CarDetailComponent } from './car-detail/car-detail.component';
+import { CreateCarComponent } from './create-car/create-car.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CarDetailComponent } from './car-detail/car-detail.component';
     HomeComponent,
     AdminPanelComponent,
     ForbiddenComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    CreateCarComponent
   ],
   imports: [
     BrowserModule,

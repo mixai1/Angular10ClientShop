@@ -8,6 +8,7 @@ import { AuthGuard } from './authentication/auth.guard';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
+import { CreateCarComponent } from './create-car/create-car.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'user', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'forbidden', component: ForbiddenComponent },
   { path: 'adminpanel', component: AdminPanelComponent, canActivate: [AuthGuard], data: { permittedRole: ['Admin'] } },
-  { path: 'detail/:id', component: CarDetailComponent }
+  { path: 'detail/:id', component: CarDetailComponent },
+  { path: 'createCar', component: CreateCarComponent }
 ];
 
 @NgModule({
