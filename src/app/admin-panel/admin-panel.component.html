@@ -1,0 +1,49 @@
+<div class="container mt-3 mb-4">
+    <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm"
+                    *ngFor="let car of listCar">
+                    <table class="table manage-candidates-top mb-0">
+                        <thead>
+                            <tr>
+                                <th>Detail Car</th>
+                                <!-- <th class="text-center">Status</th> -->
+                                <th class="action text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="candidates-list">
+                                <td class="title">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="{{car.img}}" alt="">
+                                    </div>
+                                    <div class="candidate-list-details">
+                                        <div class="candidate-list-info">
+                                            <div class="candidate-list-title">
+                                                <h5 class="mb-0">{{car.nameCar}}</h5>
+                                            </div>
+                                            <div class="candidate-list-option">
+                                                <ul class="list-unstyled">
+                                                    <li><i class="far fa-comment-alt pr-1"></i>Description: {{car.desc}}</li>
+                                                    <li><i class="far fa-credit-card pr-1"></i>Price: {{car.price}} $
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="candidate-list-favourite-time text-center">
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-end">
+                                        <li><button [routerLink] = "['/detail',car.id]" class="text-primary"><i class="far fa-eye"></i> Detail</button></li>
+                                        <li><button (click)="deleteCar(car.id)" class="text-danger"><i class="far fa-trash-alt"> Delete</i></button></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

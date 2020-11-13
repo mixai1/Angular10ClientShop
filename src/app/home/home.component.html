@@ -1,0 +1,37 @@
+<div class="container mt-100 mt-60">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="section-title mb-4 pb-2">
+                <h4 class="display-1">Car Shop</h4>
+            </div>
+            <div>
+                <!-- <form> -->
+                    <select [(ngModel)] = "filterCar.typeEngine">
+                        <option *ngFor="let op of TypeEngine">{{op}}</option>
+                    </select>
+                    <!-- <input type="number" [ngModel]="filterCar.price"> -->
+                    <!-- <input type="text" [ngModel] = "filterCar.name"> -->
+                <!-- </form> -->
+                <button (click)= "filterCars()">filter</button>
+                <button (click) = "ngOnInit()">reset</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mt-4 pt-2" *ngFor="let car of listCars">
+            <div class="blog-post rounded border">
+                <div class="card">
+                    <img src="{{car.img}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{car.nameCar}}</h5>
+                        <h6><span>Price:</span> {{car.price}} $</h6>
+                    </div>
+                    <div class="card-body">
+                        <button [routerLink]="['/detail',car.id]" class="btn btn-dark btn-block"><i
+                                class="fas fa-eye pr-3"> Detail</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

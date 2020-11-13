@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <div class="wrapped-div">
+        <div class="col-md-4" routerLink='/registration'>
+            <img src="../../assets/image/add-user.png" alt="" class="rounded mx-auto d-block">
+        </div>
+        <div class="tap-header">
+            <h1 routerLink='/createCar' style="text-align: center;"><i style="color: white;" class="fas fa-paperclip"> Want to create ?</i></h1>
+            <h2 routerLink='/login' routerLinkActive='active' style="text-align: center; color: white;">Sing In</h2>
+            <h2 routerLink='/registration' routerLinkActive='active' style="text-align: center; color: white;">Sing Up
+            </h2>
+
+            <div class="container" *ngIf="userCurrent">
+                <p style="color: white;"><strong>Name: {{userCurrent?.userName}}</strong></p>
+                <p style="color: white;"><strong> Email: {{userCurrent?.email}}</strong></p>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary btn-lg active" routerLink='/adminpanel'
+                    *ngIf="roleName === 'Admin' "><i class="fas fa-street-view pr-1">Admin-panel</i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

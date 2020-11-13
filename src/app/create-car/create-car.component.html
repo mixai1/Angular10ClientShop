@@ -1,0 +1,23 @@
+<form [formGroup] = "service.formModel" (submit) = "onSubmit()" autocomplete="off">
+    <div class="form-group required">
+      <label for="exampleFormControlInput1">Car brand</label>
+      <input type="text" class="form-control" placeholder="Mercedes" formControlName="Brand" required>
+    </div>
+    <div class="form-group required">
+        <label for="exampleFormControlInput1">URL-photo</label>
+        <input type="url" class="form-control" placeholder="URL" formControlName="URL" required>
+      </div>
+    <div class="form-group required">
+        <label for="exampleFormControlInput1">Price</label>
+        <input type="number" class="form-control" placeholder="Price in $" formControlName="Price" required>
+    </div>
+    <div class="form-group required">
+        <label for="exampleFormControlInput1">Type Engine</label>
+        <input type="text" class="form-control" placeholder="Petrol" formControlName="TypeEngine" required>
+    </div>
+    <div class="form-group required">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" placeholder="Describe the car" rows="2" formControlName="Description" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg btn-block" [disabled]= "service.formModel.invalid">Submit</button>
+  </form>
